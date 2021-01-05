@@ -1,0 +1,20 @@
+{
+   "name":"Anarkrypto",
+   "github":"anarkrypto",
+   "twitter":"anarkrypto",
+   "nano_account":"nano_3kc8wwut3u8g1kwa6x4drkzu346bdbyqzsn14tmabrpeobn8igksfqkzajbb",
+   "sponsor_link":"https://github.com/sponsors/anarkrypto",
+   "avatar":"https://avatars.githubusercontent.com/anarkrypto",
+   "description":"Creator and maintainer of [P2PoW](https://p2pow.online), a P2P solution for Nano Proof of Work delegation and [NanoProfile](https://nanoprofile.online), a decentralized solution that uses a P2P network (IPFS) and Nano onchain transactions to allow users to associate profile images with their Nano accounts. \n\nWorking on updates and new Nano projects. \nI love to create decentralized solutions as a defense of freedom, privacy and security. Your contribution will help me to create new projects for Nano community.",
+   "tags":[
+      "P2PoW",
+      "NanoProfile",
+      "Javascript",
+      "Python",
+      "Linux",
+      "Decentralazation",
+      "Security",
+      "Open-source",
+      "Cypherpunk"
+   ]
+}
