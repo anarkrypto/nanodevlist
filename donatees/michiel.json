@@ -1,0 +1,13 @@
+{
+  "name": "Michiel",
+  "github": "michielpost",
+  "twitter": "michielpostnl",
+  "nano_account": "nano_14ezmbmoj5zqzoj7g99bec1rfr7woe1d7bsa87wmsbfpt4u4mnur8183oqtm",
+  "sponsor_link": "",
+  "avatar": "https://avatars.githubusercontent.com/u/1315216?s=460&u=da158735f7c90863b6f98fc1cc099daaaaa8e672&v=4",
+  "description": "Author of the NanoRPC library for C#, which makes it easy to communicate with a Nano node using C#. The library can be used on Linux, Mac, Windows and with Unity using the power of the cross platform .Net framework.",
+  "tags": [
+    "C#",
+    "RPC"
+  ]
+}
