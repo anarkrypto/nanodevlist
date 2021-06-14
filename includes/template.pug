@@ -13,36 +13,7 @@ block vars
 - const pageDescription = description || siteDescription
 - const pageKeywords = keywords || siteKeywords
 
-mixin donatee(d)
-  .donatee&attributes(attributes)
-    if d.avatar
-      img.avatar(src=d.avatar alt=d.name)
-    else
-      img.avatar(src="/avatar.png" alt=d.name)
-    .top
-      h3.name
-        a(href=`/${d.id}/`)= d.name
-      if d.twitter
-        a.twitter(href=`https://twitter.com/${d.twitter}` target="_blank") Twitter
-      if d.github
-        a.github(href=`https://github.com/${d.github}` target="_blank") GitHub
-    if d.nano_account
-      a.cta(href=`https://tools.nanos.cc/?tool=pay&address=${d.nano_account}&amount=&recipient=${d.name.split(' ')[0]}&message=Donation to ${d.name.split(' ')[0]}`)
-        = `Give a Nano Donation`
-    if d.sponsor_link
-      a.cta(href=d.sponsor_link)
-        = `Sponsor ${d.name.split(' ')[0]}`
-    if d.description
-      .description!= renderMarkdown(d.description)
-    if d.tags
-      .tags
-        each tag in d.tags
-          a.tag(href=`/tag/${slugify(tag)}`)= tag
-
-mixin donatees(list)
-  ul.donatees&attributes(attributes)
-    each d in shuffle(list)
-      li: +donatee(d)
+include /mixins.pug
 
 <!DOCTYPE html>
 html(lang="en")
@@ -67,44 +38,37 @@ html(lang="en")
     link(rel="icon" type="image/png" sizes="16x16" href="/favicon.png")
     link(rel="stylesheet" href="/index.css")
     title= pageTitle
+    style.
+      .avatar { background-image: url(#{assetPath("/img/avatar.svg")}); }
   body
     header.header
       .wrap
         .inner
           a(href="/")
-            img.logo(src="/nano.svg")
+            img.logo(src=assetPath("/img/nano.svg"))
           div
             h1= siteTitle
             h2= siteDescription
     main.main
       .wrap
-        .intro
-          p
-            | Below you find people working on the
-            = " "
-            a(href=nanoUrl) Nano protocol
-            = " "
-            | or
-            = " "
-            a(href=projectUrl) related projects
-            | .
-            | The goal is to increase the visibility of developers accepting donations.
-            | If you are currently working on Nano related projects (that is not a for-profit company), submit a PR with your info
-            = " "
-            a(href=editUrl) as seen here
-            | .
-          p
-            | Being listed on this site should not be considered an endorsement. The list is randomized for each visit.
-
         block main
 
         script.
+          // shuffle
           const shuffle = arr => { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * i); const temp = arr[i]; arr[i] = arr[j]; arr[j] = temp; }; return arr }
           const lists = document.querySelectorAll('.donatees')
           lists.forEach(list => {
             const donatees = Array.from(list.querySelectorAll('li'))
             list.innerHTML = ""
             shuffle(donatees).forEach(li => list.appendChild(li))
+          })
+          // more
+          const more = document.querySelectorAll('.showMore')
+          more.forEach(link => {
+            link.addEventListener('click', e => {
+              e.preventDefault()
+              link.parentNode.parentNode.classList.add('expanded')
+            })
           })
 
     footer.footer
