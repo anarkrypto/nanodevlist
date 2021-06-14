@@ -3,7 +3,7 @@ mixin donatee(d, trunc = true)
   .donatee(id=d.id)&attributes(attributes)
     .inner
       a(href=detailUrl)
-        img.avatar(src=(d.avatar || assetPath("/img/avatar.svg")) alt=d.name)
+        img.avatar(src=(d.avatar || "/img/avatar.png") alt=d.name)
       h3.name
         a(href=detailUrl)= d.name
       .center
@@ -27,11 +27,12 @@ mixin donatee(d, trunc = true)
           if d.github
             a.github(href=`https://github.com/${d.github}` target="_blank"): +icon('github', 'GitHub')
       .foot
-        if d.donate
-          a.cta(href=d.donate)
-            = `Donate to ${d.name.split(' ')[0]}`
-            if d.lightning
-              span.ln= "⚡️"
+        if d.nano_account
+          a.cta(href=`https://tools.nanos.cc/?tool=pay&address=${d.nano_account}&amount=&recipient=${d.name.split(' ')[0]}&message=Donation to ${d.name.split(' ')[0]}` target="_blank")
+            = `Give a Nano Donation`
+        if d.sponsor_link
+          a.cta(href=d.sponsor_link class="secondButton" target="_blank")
+            = `Sponsor ${d.name.split(' ')[0]}`
 
 mixin donatees(list)
   ul.donatees&attributes(attributes)
@@ -40,4 +41,4 @@ mixin donatees(list)
 
 mixin icon(id, title)
   svg(role="img" title=(title || id))&attributes(attributes)
-    use(xlink:href=`${assetPath("/img/icons.svg")}#${id}`)
+    use(xlink:href=`${"/img/icons.svg"}#${id}`)

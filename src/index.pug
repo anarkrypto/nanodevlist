@@ -9,14 +9,14 @@ block main
       = " "
       | or
       = " "
-      a(href=projectUrl) related projects
-      | .
-      | The goal is to increase the visibility of developers accepting donations.
+      a(href=projectUrl) related projects. #[br]
+      | The goal is to increase the visibility of developers accepting donations. #[br]
       | If you are currently working on Nano related projects (that is not a for-profit company), submit a PR with your info
       = " "
       a(href=editUrl) as seen here
       | .
     p
-      | Being listed on this site should not be considered an endorsement. The list is randomized for each visit.
+      | Being listed on this site should not be considered an endorsement. #[br]
+      | The list is randomized for each visit.
 
   +donatees(siteData.donatees)

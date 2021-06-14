@@ -265,7 +265,7 @@ img {
 }
 
 .intro {
-  max-width: 31em;
+  max-width: 33em;
   margin: 0 auto var(--space-xxl);
   color: var(--color-neutral-50);
 
@@ -338,6 +338,10 @@ img {
   & .foot {
     margin-top: var(--space-l);
     text-align: center;
+  }
+
+  & .secondButton {
+    margin-top: 15px;
   }
 
   & .social {
