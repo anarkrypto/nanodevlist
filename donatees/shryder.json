@@ -1,0 +1,15 @@
+{
+  "name": "Shryder",
+  "github": "Shryder",
+  "twitter": "",
+  "nano_account": "nano_14ktfmobt5pfmqjgd1piauku1bgtpq8zbfoxtrud1a7a1kj74h9rjcq1rmnc",
+  "sponsor_link": "",
+  "avatar": "https://avatars.githubusercontent.com/u/8571381?v=4",
+  "description": "Creator of [NanoNativeWallet](https://github.com/Shryder/NanoNativeWallet), [LightweightNanoRPCProxy](https://github.com/Shryder/LightweightNanoRPCProxy), [NanoNodeMonitor](https://github.com/Shryder/NanoNodeMonitor), owner of a Nano representative node that offers a barebones network explorer and free unlimited RPC requests for developers: [ShryNode](https://shrynode.me). Trying to assist with the development of the nano node as much as I can.",
+  "tags": [
+  	"Javascript",
+  	"Wallet",
+  	"NodeMonitor",
+  	"C++"
+  ]
+}
