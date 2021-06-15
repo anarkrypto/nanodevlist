@@ -14,7 +14,7 @@ mdTransformer.render = str => renderMd(str, config)
 
 const slugify = str => str.toLowerCase().replace(/\W/, '-')
 const truncate = (str, wordCount) => {
-  const words = str.replace('\n','<br>').trim().split(/\s(?![^\[]*\])/g)
+  const words = str.replace(/\n/g,'<br>').trim().split(/\s(?![^\[]*\])/g)
   const head = words.splice(0, wordCount).join(' ')
   const tail = words.join(' ')
   return [head, tail]
