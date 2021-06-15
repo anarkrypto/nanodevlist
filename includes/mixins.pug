@@ -9,7 +9,7 @@ mixin donatee(d, trunc = true)
       .center
         if d.description
           .description
-            - const [head, tail] = trunc ? truncate(d.description, 21) : [d.description]
+            - const [head, tail] = trunc ? truncate(d.description, 60) : [d.description]
             - const description = tail ? `${head} <a href="${detailUrl}" class="showMore">[…&nbsp;more]</a> <span class="more">${tail}</span>` : head
             != renderMarkdown(description)
         if d.tags
