@@ -25,7 +25,7 @@ const assetPath = path => {
   return `${(revs && revs[path]) || path}`
 }
 const assetUrl = (path, protocol = 'https') => {
-  return `${protocol}://nanodevlist.com/${assetPath(path)}`
+  return `${protocol}://nanodevlist.com${assetPath(path)}`
 }
 
 module.exports = {
